@@ -1,0 +1,50 @@
+<div class="carousel-bg" style="overflow: hidden; zoom:1;">
+    <section class="shuffling-wrapper pull-left">
+      <div class="focus">
+        <ul class="showimg unstyled">
+          <li class="scroll-01" v-if="shufflingId == 0" v-on:mouseover='stopCarousel()' v-on:mouseout='startCarousel()'>
+            <div class="scroll-img-box">
+              <div class="content-box text-center">
+                <h1 class="font40">派兰大数据云分析平台</h1>
+                <h1 class="mt-50 font40">零部署&nbsp;&nbsp;&nbsp;&nbsp;云分析&nbsp;&nbsp;&nbsp;&nbsp;只要有网就行</h1>
+                <a class="btn" href="http://www.palandata.com/#/register">免费注册</a>
+              </div>
+            </div>
+          </li>
+          <li class="scroll-02" v-if="shufflingId == 1" v-on:mouseover='stopCarousel()' v-on:mouseout='startCarousel()'>
+            <div class="scroll-img-box">
+              <div class="content-box">
+                <h1 class="text-center font40">医疗大数据临床数据分析服务</h1>
+                <h1 class="mt-50 font40">真实世界研究&nbsp;&nbsp;&nbsp;&nbsp;药物经济学分析&nbsp;&nbsp;&nbsp;&nbsp;临床预测诊断</h1>
+              </div>
+            </div>
+          </li>
+          <li class="scroll-03" v-if="shufflingId ==2" v-on:mouseover="stopCarousel()" v-on:mouseout="startCarousel()">
+            <div class="scroll-img-box">
+              <div class="content-box horizontal-flex">
+                <div>
+                  <img src="/static/img/1.png" class="img-responsive margin-center" width="70%">
+                  <h1 class="mt-30 text-center">数据建模</h1>
+                </div>
+                <div style="margin: 0 70px;">
+                  <img src="/static/img/2.png" class="img-responsive margin-center" width="70%">
+                  <h1 class="mt-30 text-center">数据分析</h1>
+                </div>
+                <div>
+                  <img src="/static/img/3.png" class="img-responsive margin-center" width="70%">
+                  <h1 class="mt-30 text-center">数据挖掘</h1>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class='bullet-pagination'>
+          <a class="bullet pointer" :class="{'active': shufflingId == 0}" v-on:click='shufflingId = 0;'></a>
+          <a class="bullet pointer" :class="{'active': shufflingId == 1}" v-on:click='shufflingId = 1;'></a>
+          <a class="bullet pointer" :class="{'active': shufflingId == 2}" v-on:click='shufflingId = 2;'></a>
+        </div>
+        <!--<div v-show='PreNext' class="preNext pre fa fa-chevron-left" v-on:mouseover='showPreNext' v-on:mouseout='hiddenPreNext' v-on:click='preFun'></div>
+        <div v-show='PreNext' class="preNext next fa fa-chevron-right" v-on:mouseover='showPreNext' v-on:mouseout='hiddenPreNext' v-on:click='nextFun'></div>-->
+      </div>
+    </section>
+</div>
