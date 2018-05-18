@@ -1,0 +1,19 @@
+var app = angular.module('studioApp');
+
+app.factory("AppConstants", function($rootScope) {
+    const cst = {
+        ARCHIVED_PROJECT_STATUS: "Archived",
+        design: {
+            alertClasses: {
+                SUCCESS: 'alert-success',
+                FATAL: 'alert-danger',
+                ERROR: 'alert-danger',
+                WARNING: 'alert-warning',
+                INFO: 'alert-info'
+            }
+        }
+    };
+    $rootScope.AppConstants = cst;
+
+    return cst;  //定义常量，需要返回，使用时注入‘AppConstants’,调用AppConstants.ARCHIVED_PROJECT_STATUS
+});
