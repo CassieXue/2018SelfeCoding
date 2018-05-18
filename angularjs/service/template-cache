@@ -1,0 +1,22 @@
+/***
+// $templateCache服务允许 $http 服务缓存经过XHR的模板请求，这样它们就只会被请求一次。
+// 当一个模板被取到了，它的内容就会存储在 $templateCache 中，用模板路径作键。
+// 默认情况下，Angular无法从本地 $tempalteCache 中找到模板时，会通过XHR提取模板。
+// 当XHR请求很慢，或者模板很大时，它可能会对应用的用户体验造成很大的负面影响。
+//　因此可以通过“伪造” $templateCache 已经被填充的方式来避免这一延迟，这样Angular就不必从远程加载模板。
+*****/
+angular.module('studioApp')
+  .run(['$templateCache', function($templateCache) {
+  
+    'use strict';
+  
+    $templateCache.put('/templates/404.html',
+      "<div class=\"alert alert-error\">\n" +
+      "Page not found {{$stateParams}}\n" +
+      "</div>"
+    );
+    
+    $templateCache.put('/templates/home.html', "<h1>This is the home template!</h1>");
+}
+
+// 当页面需要加载模板/templates/home.html和/templates/404.html时就会在 $templateCahce 中找到它，而无需从服务器提取。
